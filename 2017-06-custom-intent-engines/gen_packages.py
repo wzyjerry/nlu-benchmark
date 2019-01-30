@@ -89,7 +89,7 @@ def make_package(
             'cut': 0,
             'isSlot': True,
             'name': '<%s>' % node['value'],
-            'entity': entitymap[node['value']],
+            'entity': entitymap['%s_%s' % (name, node['value'])],
             'slot': node['slot']
           })
   return json.dumps(package)

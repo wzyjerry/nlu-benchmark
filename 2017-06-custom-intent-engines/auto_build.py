@@ -4,7 +4,7 @@ from urllib import request
 # settings
 host = '166.111.5.228'
 port = 8765
-agent_id = '5c513fefc4952f59c8d2450d'
+agent_id = '5c514b7ac4952f1a7d8e96c3'
 api_key = 'adda9e68b1d7b08d0820c1b38405e89c81b514700f1ca9bb'
 
 def get_entity_list():
@@ -55,7 +55,7 @@ for dirpath, dirnames, filenames in os.walk('out/entities'):
     with open(os.path.join(dirpath, filename), 'r', encoding='utf-8') as fin:
       entities = []
       for line in fin:
-        entities.append(line)
+        entities.append(line.strip())
       create_new_entity(filename, entities)
 from gen_packages import gen_packages
 gen_packages(get_entity_list())

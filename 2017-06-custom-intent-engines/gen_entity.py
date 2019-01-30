@@ -21,8 +21,9 @@ for intent in intents:
     for item in data[intent]:
       for seg in item['data']:
         if 'entity' in seg:
-          entities.setdefault(seg['entity'], set())
-          entities[seg['entity']].add(seg['text'].strip())
+          name = '%s_%s' % (intent, seg['entity'])
+          entities.setdefault(name, set())
+          entities[name].add(seg['text'].strip())
 
 OUT_DIR = 'out/entities'
 for kind in entities:
