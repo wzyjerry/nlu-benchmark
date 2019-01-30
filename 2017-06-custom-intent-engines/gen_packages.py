@@ -104,7 +104,7 @@ intents = [
   'SearchScreeningEvent'
 ]
 
-template = 'train_%s.json'
+template = 'train_70_%s.json'
 
 def make_query_list(intent):
   queries = []
